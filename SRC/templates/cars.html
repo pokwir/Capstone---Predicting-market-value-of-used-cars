@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html style="background: url('https://media.tenor.com/h99LcQQLxp0AAAAC/car-hd-wallpapers.gif'); background-repeat: no-repeat; background-size: cover">
+  <header class="header"; style=" color:white; font-family:Monaco"></header>
+    <label style="color:white; font-family:Monaco; font-size: 110%;"> <h1>Welcome to my used car price prediction API</h1></label><br>
+    <body style="color:white; font-family:Monaco; text-align:center;"></body>
+
+  <body>
+    <form action="/predictcar" method="post" style="text-align:center; font-size:110%">
+      <label style="color:white; font-family:Monaco" for="manufacturer">Manufacturer</label><br>
+      <input type="text" name="manufacturer" placeholder="ford"><br><br>
+      <label style="color:white; font-family:Monaco" for="model">Model</label><br>
+      <input type="text" name="model" placeholder="fusion"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="condition">Condition</label><br>
+      <input type="text" name="condition" placeholder="good"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="cylinders">Cylinders</label><br>
+      <input type="text" name="cylinders" placeholder="4 cylinders"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="fuel">Fuel</label><br>
+      <input type="text" name="fuel" placeholder="gas"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="odometer">Odometer (miles)</label><br>
+      <input type="number" name="odometer" placeholder=100000><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="title_status">Title Status</label><br>
+      <input type="text" name="title_status" placeholder="clean"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="transmission">Transmission</label><br>
+      <input type="text" name="transmission" placeholder="automatic"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="drive">Drive Configuration</label><br>
+      <input type="text" name="drive" placeholder="4wd"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="type">Body type</label><br>
+      <input type="text" name="type" placeholder="sedan"><br>
+      <br>
+      <label style="color:white; font-family:Monaco" for="paint_color">Upper body paint color</label><br>
+      <input type="text" name="paint_color" placeholder="white"><br>
+      <br>
+
+      <label style="color:white; font-family:Monaco" for="year">Year</label><br>
+      <input type="number" name="year" placeholder=2011><br>
+      <br>
+      <button type="submit"; style="color:white;background-color:black;font-family:Monaco" >Submit</button>
+      <br>
+      <br>
+      <h1>Your predicted car price is: {{prediction}}</h1>
+    </form>
+  </body>
+</html>
