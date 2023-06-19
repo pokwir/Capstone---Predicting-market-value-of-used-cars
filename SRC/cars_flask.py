@@ -25,10 +25,9 @@ model = pickle.load(open('cars_model.pkl', 'rb'))
 def index():
     return render_template("Landing.html")
 
-@app.route('/templates/cars.html')
-def cars():
-    return render_template("cars.html")
-
+# @app.route('/predict')
+# def cars():
+#     return render_template("cars.html", prediction=0)
 
 # json post route
 @app.route('/predictcar', methods=['POST', 'GET'])
@@ -37,20 +36,24 @@ def predictLoan():
     # get data from html form
     data = request.form.to_dict()
     # data = request.get_json(force = True)
+    if len(data) == 0:
+        return render_template("cars.html", prediction= "Please enter valid data")
+    
+    elif len(data) !=0:
 
-    # create a dataframe from our json data
-    df = pd.DataFrame(data, index=[0])
-    df['age'] = 2021 - int(df['year'])
-    df.drop('year', axis=1, inplace=True)
+        # create a dataframe from our json data
+        df = pd.DataFrame(data, index=[0])
+        df['age'] = 2021 - int(df['year'])
+        df.drop('year', axis=1, inplace=True)
 
-    # predict loan status
-    prediction = model.predict(df)
+        # predict loan status
+        prediction = model.predict(df)
 
-    # return prediction
-    car_prediction = jsonify("Your predicted market value is USD :" + round(prediction[0], 0).astype(str) +\
-                   " Happy Selling!!!")
-    car_predict = round(prediction[0], 0)
-    return render_template("cars.html", prediction=car_predict)
+        # return prediction
+        car_prediction = jsonify("Your predicted market value is USD :" + round(prediction[0], 0).astype(str) +\
+                    " Happy Selling!!!")
+        car_predict = round(prediction[0], 0)
+        return render_template("cars.html", prediction=car_predict)
 
 
 
