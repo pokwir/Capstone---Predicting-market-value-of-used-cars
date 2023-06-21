@@ -84,3 +84,15 @@ The final model has an accuracy of 87%. The scatter plot of Actual Versus predic
 ![Model Output](Images/Model_Output.png)
 
 I also recognize that the market is volatile and the model will need to be updated regularly to keep up with the market. As an extension of this project, I will build an online learning algorithm that automatically captures new data and updates the prediction model regularly.
+<br>
+<br>
+
+## **Resources in the repo:**
+1. Kijiji marketplace scraper — scrapes used cars data from marketplace. Run this notebook once a week. The data is stored in a SQL database, if the database doesnt exists, its created automatically for you.
+2. Data Cleaning — run the 'Data Cleaning' notebook to clean the data and prepare it for analysis.
+3. Data Analytics – run the EDA notebook to analyze the data. 
+4. Modeling — run the 'Modeling' notebook, the last portion of the notebook has a section on deployment testing. 
+5. Deployment. The SRC folder  has the python flask app that you can use to deploy on the local machine. 
+6. The HTML site. The SRC folder has templates for the landing, and prediction endpoint. These templates should render seamlessly as they are already integrated with the python flask app.
+
+## **Enjoy!!**
